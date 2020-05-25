@@ -1,0 +1,68 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <mat-icon>event_note</mat-icon>
+      </div>
+      <mat-card-title>Crea un evento</mat-card-title>
+      <mat-card-subtitle>completa el formulario</mat-card-subtitle>
+    </mat-card-header>
+
+   <mat-card-content>
+
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Ex. Dev-web">
+        </mat-form-field>
+
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Descipcion</mat-label>
+            <input matInput placeholder="Ex. este evento es de una asignatura">
+          </mat-form-field>
+
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Selecciona la fecha</mat-label>
+            <input matInput type="date">
+          </mat-form-field>
+
+          
+
+      
+        
+
+
+
+      </form>
+      <div>
+      <label id="example-radio-group-label">Selecciona el estado del evento</label>
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+            [(ngModel)]="favoriteSeason">
+            <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
+                 {{season}}
+                </mat-radio-button>
+                </mat-radio-group>
+                <div> La opcion que seleccionaste es: <span style="color:red">{{favoriteSeason}}</span></div>
+            </div>
+
+
+
+    </mat-card-content>
+
+
+    <mat-card-actions>
+
+
+      <section>
+        <div class="example-button-row">
+          <button mat-raised-button color="primary" style="width: 300px;">Crear evento</button>
+        </div>
+      </section>
+
+
+    </mat-card-actions>
+    <br>
+
+  </mat-card>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eventos';
+        constructor(private router: Router){
+
+}
+createEvent(){
+  this.router.navigate(["/create-event"]);
+}
+allEvents(){
+  this.router.navigate(["/home"]);
+}
+editEvent(){
+  this.router.navigate(["/editEvent"]);
+}
+
 }
