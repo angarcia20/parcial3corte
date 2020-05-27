@@ -5,3 +5,6 @@ import { Events } from './modelEvents';
 export const allevents = createAction('[Events] allevents');
 export const createevent = createAction('[Events] createevent',
 props<{nombre:string;descripcion:string; fecha:Date;estado:string;}>());
+export const findevent = createAction('[Events] findevent',
+props<{nombre:string}>()
+);

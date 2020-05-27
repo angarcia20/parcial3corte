@@ -23,7 +23,7 @@ export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: AllEventsComponent, pathMatch: 'full'},
   {path: 'create-event', component: CreateEventComponent, pathMatch: 'full'},
-  {path: 'editEvent', component: EditEventComponent, pathMatch: 'full'}
+  {path: 'editEvent/:nombre', component: EditEventComponent, pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -41,7 +41,7 @@ export const routes: Routes = [
     MatInputModule,
     MatRadioModule,
     RouterModule.forRoot(routes),
-    StoreModule.forRoot({ events: eventsReducer }),
+    StoreModule.forRoot({events: eventsReducer }),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: environment.production, // Restrict extension to log-only mode

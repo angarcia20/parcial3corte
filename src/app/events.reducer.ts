@@ -1,23 +1,36 @@
 import { Action, createReducer, on} from '@ngrx/store';
-import { createevent } from './events.actions';
+import { createevent, allevents, findevent } from './events.actions';
 import { Events } from './modelEvents';
 
 
-export const initialState: Events[] = []
+export interface AppState{
+  events: Events[];
+};
+
+export const initialState: Events[]=[];
  
 const _eventsReducer = createReducer(initialState,
-  on(createevent, (state, {    nombre,
+on(createevent, (state, {    nombre,
                             descripcion,
                             fecha,
-                            estado} )=>   [...state,new Events(nombre,descripcion,fecha,estado)]
-                             /* state.push(
-                            {
-                              nombre: nombre,
-                              descripcion: descripcion,
-                              fecha:fecha,
-                              estado:estado
-                            })]*/
-                            )
+                            estado} )=>   [...state,new Events(nombre,descripcion,fecha,estado)] ),
+
+
+
+  on(allevents, state => state),
+
+/*
+  on(findevent, (state,{nombre }) => {
+    return state.map( events => {
+      if ( events.nombre === nombre ) {
+        return {
+         ...events
+        };
+      }  else {
+        return events;
+      }
+    });
+  })*/
 );
  
 export function eventsReducer(state, action) {

@@ -3,10 +3,7 @@ import { Store } from '@ngrx/store';
 import { Events } from '../modelEvents';
 import { createevent } from '../events.actions';
 import { Observable } from 'rxjs';
-
-interface AppState{
-    event: [];
-}
+import { AppState } from '../events.reducer';
 
 @Component({
   selector: 'app-create-event',
@@ -35,7 +32,7 @@ export class CreateEventComponent implements OnInit {
 
   botonCrear(){
     console.log(this.event);
-   // this.createEvent(this.event.nombre,this.event.descripcion,this.event.fecha,this.event.estado);
+    //this.createEvent(this.event.nombre,this.event.descripcion,this.event.fecha,this.event.estado);
   }
 
   createEvent(){
