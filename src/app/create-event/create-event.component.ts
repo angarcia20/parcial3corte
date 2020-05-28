@@ -4,6 +4,7 @@ import { Events } from '../modelEvents';
 import { createevent } from '../events.actions';
 import { Observable } from 'rxjs';
 import { AppState } from '../events.reducer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-event',
@@ -16,7 +17,7 @@ export class CreateEventComponent implements OnInit {
   favoriteSeason: string;
   seasons: string[] = ["Iniciado", "En curso", "Finalizado"];
 
-  constructor(private store: Store<AppState>) { 
+  constructor(private store: Store<AppState>, private router: Router) { 
     this.event={
       nombre:"",
       descripcion:"",
@@ -29,16 +30,11 @@ export class CreateEventComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  botonCrear(){
-    console.log(this.event);
-    //this.createEvent(this.event.nombre,this.event.descripcion,this.event.fecha,this.event.estado);
-  }
-
   createEvent(){
     console.log(this.event.nombre);
     console.log(this.event)
     this.store.dispatch(createevent({nombre:this.event.nombre,descripcion:this.event.descripcion,fecha:this.event.fecha,estado:this.event.estado}));
+    this.router.navigate(["/home"]);
 
   }
 

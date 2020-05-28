@@ -1,4 +1,6 @@
-<mat-card class="example-card" *ngFor="let event of allevents">
+<!--<mat-card class="example-card" *ngFor="let event of allevents">
+
+
 
   <button mat-fab color="primary" style="align-self: flex-end; width: 40px; height: 40px; font-size: 40px;"
      (click) = "editar(event.nombre)">
@@ -15,5 +17,117 @@
 
     <mat-card-actions>
     </mat-card-actions>
-  </mat-card>
+  </mat-card>-->
+
+  <mat-tab-group (selectedTabChange)="getTab($event)" mat-align-tabs="center">
+    
+    <mat-tab label="Todos">
+      <mat-card class="example-card" *ngFor="let event of allevents">
+        <button mat-fab color="primary" style="align-self: flex-end; width: 40px; height: 40px; font-size: 40px;"
+           (click) = "editar(event.nombre)">
+          <mat-icon  style="margin-top: -20px;" >edit</mat-icon></button>
+      
+            <mat-card-title style="text-align: center;">{{event.nombre}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;">{{event.fecha}}</mat-card-subtitle>
+          
+          <mat-card-content style="text-align: start;">
+            <p>
+              {{event.descripcion}}
+            </p>
+          </mat-card-content>
+
+          <section style="margin: auto;">
+            <button mat-flat-button style="background-color: red; color: white;" *ngIf="estados(event.estado)==3">Finalizado</button>
+            <button mat-flat-button style="background-color: goldenrod; color: white;" *ngIf="estados(event.estado)==2">En curso</button>
+            <button mat-flat-button style="background-color: yellowgreen; color: white;" *ngIf="estados(event.estado)==1">Iniciado</button>
+          </section>
+      
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+
+
+    <mat-tab label="Iniciado">    
+      <mat-card class="example-card" *ngFor="let event of allevents">
+        <button mat-fab color="primary" style="align-self: flex-end; width: 40px; height: 40px; font-size: 40px;"
+           (click) = "editar(event.nombre)">
+          <mat-icon  style="margin-top: -20px;" >edit</mat-icon></button>
+      
+            <mat-card-title style="text-align: center;">{{event.nombre}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;">{{event.fecha}}</mat-card-subtitle>
+          
+          <mat-card-content style="text-align: start;">
+            <p>
+              {{event.descripcion}}
+            </p>
+          </mat-card-content>
+
+          <section style="margin: auto;">
+            <button mat-flat-button style="background-color: red; color: white;" *ngIf="estados(event.estado)==3">Finalizado</button>
+            <button mat-flat-button style="background-color: goldenrod; color: white;" *ngIf="estados(event.estado)==2">En curso</button>
+            <button mat-flat-button style="background-color: yellowgreen; color: white;" *ngIf="estados(event.estado)==1">Iniciado</button>
+          </section>
+      
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+
+
+    <mat-tab label="En curso">
+
+      <mat-card class="example-card" *ngFor="let event of allevents">
+        <button mat-fab color="primary" style="align-self: flex-end; width: 40px; height: 40px; font-size: 40px;"
+           (click) = "editar(event.nombre)">
+          <mat-icon  style="margin-top: -20px;" >edit</mat-icon></button>
+      
+            <mat-card-title style="text-align: center;">{{event.nombre}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;">{{event.fecha}}</mat-card-subtitle>
+          
+          <mat-card-content style="text-align: start;">
+            <p>
+              {{event.descripcion}}
+            </p>
+          </mat-card-content>
+
+          <section style="margin: auto;">
+            <button mat-flat-button style="background-color: red; color: white;" *ngIf="estados(event.estado)==3">Finalizado</button>
+            <button mat-flat-button style="background-color: goldenrod; color: white;" *ngIf="estados(event.estado)==2">En curso</button>
+            <button mat-flat-button style="background-color: yellowgreen; color: white;" *ngIf="estados(event.estado)==1">Iniciado</button>
+          </section>
+      
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+
+
+    <mat-tab label="Finalizado"> 
+      <mat-card class="example-card" *ngFor="let event of allevents">
+        <button mat-fab color="primary" style="align-self: flex-end; width: 40px; height: 40px; font-size: 40px;"
+           (click) = "editar(event.nombre)">
+          <mat-icon  style="margin-top: -20px;" >edit</mat-icon></button>
+      
+            <mat-card-title style="text-align: center;">{{event.nombre}}</mat-card-title>
+            <mat-card-subtitle style="text-align: center;">{{event.fecha}}</mat-card-subtitle>
+          
+          <mat-card-content style="text-align: start;">
+            <p>
+              {{event.descripcion}}
+            </p>
+          </mat-card-content>
+
+          <section style="margin: auto;">
+            <button mat-flat-button style="background-color: red; color: white;" *ngIf="estados(event.estado)==3">Finalizado</button>
+            <button mat-flat-button style="background-color: goldenrod; color: white;" *ngIf="estados(event.estado)==2">En curso</button>
+            <button mat-flat-button style="background-color: yellowgreen; color: white;" *ngIf="estados(event.estado)==1">Iniciado</button>
+          </section>
+      
+          <mat-card-actions>
+          </mat-card-actions>
+        </mat-card>
+
+    </mat-tab>
+  </mat-tab-group>
 

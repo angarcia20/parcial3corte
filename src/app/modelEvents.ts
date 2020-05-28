@@ -1,8 +1,8 @@
 export class Events{
-    nombre:string;
-    descripcion:string;
-    fecha:Date;
-    estado:string;
+   public  nombre:string;
+   public descripcion:string;
+   public  fecha:Date;
+   public estado:string;
 
     constructor(nombre:string,descripcion:string,fecha:Date,estado:string){
 

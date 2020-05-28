@@ -18,6 +18,7 @@ import { StoreModule } from '@ngrx/store';
 import { eventsReducer } from './events.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from 'src/environments/environment';
+import {MatTabsModule} from '@angular/material/tabs';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -40,6 +41,7 @@ export const routes: Routes = [
     MatIconModule,
     MatInputModule,
     MatRadioModule,
+    MatTabsModule,
     RouterModule.forRoot(routes),
     StoreModule.forRoot({events: eventsReducer }),
     StoreDevtoolsModule.instrument({
